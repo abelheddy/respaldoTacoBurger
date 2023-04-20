@@ -1,3 +1,7 @@
+<?php
+include('Menu.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +12,10 @@
     <link rel="stylesheet" href="../css/Estilos.css">
 </head>
 <body>
-    <?php
-    include('menu.php')    
-    ?>
+
 
     <main class="principal">
-    <h1>Taco Burger</h1>
+    <center><h1>Taco Burger</h1></center>
     </main>
     
 </body>

@@ -22,15 +22,20 @@
 							<br>
 							<thead>
 								<tr class='row100 head'>
-									<th>ID</th>
+									<th>
+                                       <center>ID VENTA</center> 
+                                    </th>
 									<th >
-										<center>NOMBRE</center>
+										<center>FECHA DE VENTA</center>
 									</th>
 									<th >
-										<center>PASSWORD</center>
+										<center>ID_AUXVENTA</center>
 									</th>
 									<th>
-										<center>NIVEL</center>
+										<center>MONTO TOTAL</center>
+									</th>
+                                    <th>
+										<center>ID USUARIO</center>
 									</th>
 									<th>
 										<center>EDITAR</center>
@@ -42,25 +47,28 @@
 								<?php
 								require('../Modelo/Conexion.php');
 								require('../Modelo/ModeloBurger.php');
-								$result = Consultar('usuario','order by id_Usuario');
+								$result = Consultar('venta','order by id_venta');
 								while ($crow = mysqli_fetch_assoc($result)) {
 								?>
 									<tr class='row100'>
 										<td style='width:10px'>
-											<center> <?php echo $crow['id_Usuario']; ?> </center>
+											<center> <?php echo $crow['id_venta']; ?> </center>
 										</td>
 										<td>
-											<center><?php echo $crow['nombre']; ?> </center>
+											<center><?php echo $crow['fecha']; ?> </center>
 										</td>
 										<td>
-											<center><?php echo $crow['password']; ?></center>
+											<center><?php echo $crow['id_auxventa']; ?></center>
 										</td>
 										<td>
-											<center><?php echo $crow['nivel']; ?></center>
+											<center><?php echo $crow['monto_total']; ?></center>
+										</td>
+                                        <td>
+											<center><?php echo $crow['id_Usuario']; ?></center>
 										</td>
 											
 										<td>
-											<center><a href="../Modelo/Editar_Usuario.php?EDITAR_ID=<?php echo $crow['id_Usuario']; ?>" class="edit_btn">Editar</a></center>
+											<center><a href="../Modelo/Editar_Venta.php?EDITAR_ID=<?php echo $crow['id_venta']; ?>" class="edit_btn">Editar</a></center>
 										</td>
 										
 										</form>

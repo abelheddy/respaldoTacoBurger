@@ -6,7 +6,7 @@
         $Nom = $_REQUEST['nom'];
         $psw = $_REQUEST['psw'];
         $nivel = $_REQUEST['nvl'];
-        $datos = "'".$Nom."','".$psw."','".$nivel."'";
+        $datos = "null,'".$Nom."','".$psw."','".$nivel."'";
         Alta('usuario',$datos);
 
         echo "<script type='text/javascript'>
@@ -16,7 +16,7 @@
 
     if(isset($_POST['RegistIng'])){
         $Ingre = $_REQUEST['ingrediente'];
-        $datos = "'".$Ingre."'";
+        $datos = "null,'".$Ingre."'";
         Alta('ingrediente',$datos);
         echo "<script type='text/javascript'>
         window.location.href = '../Vistas/Agregar_Ingrediente.php';
@@ -26,7 +26,7 @@
     if(isset($_POST['RegistPlatillo'])){
         $nomPlatillo = $_REQUEST['nomPlatillo'];
         $precio = $_REQUEST['precio'];
-        $datos = "'".$nomPlatillo."',".$precio."";
+        $datos = "null,'".$nomPlatillo."',".$precio."";
 
         Alta('platillo',$datos);
         echo "<script type='text/javascript'>

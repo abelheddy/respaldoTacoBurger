@@ -1,18 +1,12 @@
 <?php
-    include('menu.php');
+include('Menu.php');
 ?>
 <!DOCTYPE html>
 
 <html>
 
 <head>
-
-    <style>
-        .content {
-            max-width: auto;
-            margin: auto;
-        }
-    </style>
+<link rel="stylesheet" href="../css/Estilos_tablas.css" type="text/css">
 
 </head>
 <center>

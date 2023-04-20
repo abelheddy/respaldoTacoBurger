@@ -1,10 +1,13 @@
 <?php
-    include('menu.php');
+include('Menu.php');
 ?>
 <!DOCTYPE html>
 
 <html>
+<head>
+	<link rel="stylesheet" href="../css/Estilos_tablas.css" type="text/css">
 
+</head>
 <center>
 
     <body>
@@ -15,7 +18,7 @@
                     <div class='table100 ver1 m-b-110'>
                         <table data-vertable='ver1'>
                             <br>
-                            <h2>TABLA USUARIOS</h2>
+                            <h2>TABLA PLATILLOS</h2>
                             <br>
                             <thead>
                                 <tr class='row100 head'>
@@ -27,6 +30,9 @@
                                     </th>
                                     <th>
                                         <center>COSTO</center>
+                                    </th>
+                                    <th>
+                                        <center>EDITAR</center>
                                     </th>
                                 </tr>
                             </thead>

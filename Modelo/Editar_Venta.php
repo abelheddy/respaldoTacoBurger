@@ -1,10 +1,9 @@
 <?php
-require("../Modelo/ModeloBurger.php");
-include('../Vistas/Menu.php');
-
-
+require("../Modelo/Conexion.php");
+require("../Vistas/Menu.php");
 $id = $_GET['EDITAR_ID'];
-$result = Consultar('ingrediente', "WHERE id_ingrediente = $id");
+$sele = "SELECT * FROM venta WHERE id_venta = $id ";
+$result = $conexion->query($sele);
 $row = mysqli_fetch_assoc($result);
 ?>
 
@@ -14,7 +13,7 @@ $row = mysqli_fetch_assoc($result);
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="../css/Estilos_Inputs.css" type="text/css">
-    <title>EDITAR INGREDIENTES</title>
+    <title>EDITAR CLIENTES</title>
     <!--======================================= ESTILO DE LA TABLA PLOMO ==============================-->
 
 
@@ -28,11 +27,20 @@ $row = mysqli_fetch_assoc($result);
 
 
 <?php
-require("../Modelo/Conexion.php");
 $status = "";
 if (isset($_POST["enviar"])) {
-    $ingre = $_POST["ingrediente"];
-    $update = 'UPDATE ingrediente SET ingrediente=TRIM("' . $ingre . '") WHERE id_Ingrediente =TRIM(' . $id . ');';
+    $fecha = $_POST["fecha"];
+    $monto = $_POST["monto_total"];
+ 
+
+
+    $update = 'UPDATE venta (fecha,monto_total) SET
+
+fecha=TRIM("' . $fecha . '"),
+
+monto_total=TRIM("' . $monto . '"),
+      
+WHERE id_venta=TRIM(' . $id . ')';
 
 
     if ($conexion->query($update) === TRUE) {
@@ -53,22 +61,26 @@ if (isset($_POST["enviar"])) {
 
     <body>
         <div class="container">
+
+
             <form method="post" action="">
-                <h1>Modificar Ingrediente</h1>
+
+                <label>Fecha de venta:</label>
                 <div class="form-group">
-                    <label class="description" for="producto">Ingrediente: </label>
-                    <input id="ingrediente" name="ingrediente" type="text" value="<?php echo $row['ingrediente']; ?>" />
+                    <input id="fecha" name="fecha" class="element text medium" type="text" maxlength="255" value="<?php echo $row['fecha']; ?>" />
                 </div>
 
-
                 <div class="form-group">
-                    <button id="saveForm"type="submit" name="enviar">EDITAR</button>
-                    <button class="button2" type="submit" onclick="javascript: form.action='../Vistas/ConsultaIngredientes.php';">REGRESAR</button>
+                    <label>Monto Total: </label>
+                    <input id="monto" name="monto" type="text" value="<?php echo $row['monto_total']; ?>" />
                 </div>
 
+                <div class="form-group">
+                    <button id="saveForm" type="submit" name="enviar">EDITAR</button>
+                    <button class="button2" type="submit" onclick="javascript: form.action='../Vistas/ConsultarVenta.php';">REGRESAR</button>
+                </div>
             </form>
         </div>
-
 
     <?php } ?>
 

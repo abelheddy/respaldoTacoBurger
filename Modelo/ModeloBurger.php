@@ -2,14 +2,16 @@
     
     function Alta($tabla,$datos){
         include 'Conexion.php';
-        $sql = "INSERT INTO ".$tabla." VALUES (null,".$datos.");";
+        $sql = "INSERT INTO ".$tabla." VALUES ($datos);";
         $result = mysqli_query($conexion,$sql);
 
         if(!$result){
             echo '<script type="text/javascript">
             alert("Uppss ah ocurrido un error");
             </script>';
-        } 
+        } else{
+            return $result;
+        }
     }
 
     function Eliminar($tabla,$condicion){

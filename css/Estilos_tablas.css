@@ -1,0 +1,105 @@
+/* Estilo para el cuerpo de la página */
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para el contenedor principal */
+  form {
+    position: relative; /* Para que los elementos internos se posicionen relativamente */
+  }
+  
+  /* Estilo para el contenedor de los botones */
+  .ContBtn {
+    position: ab; /* Para que los botones se mantengan fijos en la parte superior de la pantalla */
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para el contenedor de la tabla */
+  .ContTable {
+    height: calc(100vh - 200px); /* El alto debe ser igual a la altura de la ventana menos la altura de los botones y el título */
+    overflow-y: auto; /* Permite que el contenedor tenga una barra de desplazamiento vertical cuando sea necesario */
+  }
+  
+  /* Estilo para la tabla */
+  table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px; /* Margen superior igual a la altura de los botones */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para los encabezados de la tabla */
+  table th {
+    background-color: #f2f2f2;
+    padding: 8px;
+  }
+  
+  /* Estilo para las filas pares de la tabla */
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para las celdas de la tabla */
+  table td {
+    padding: 8px;
+  }
+  
+  /* Estilo para los botones */
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+
+/* Estilo para los inputs en las celdas de la última columna */
+table td input[type=number] {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 2px 0;
+    border: 5px rgb(54, 54, 54);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* Estilo para el botón Finalizar compra */
+button[name="enVenta"] {
+    background-color: #4CAF50;
+}
+
+/* Estilo para el botón Cancelar compra */
+button[name="Cancelar"] {
+    background-color: #f44336;
+}
+
+button[name="ConsultV"] {
+  background-color: #2f7ece;
+}
+
+/* Estilo para el título de la página */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #4CAF50;
+}

@@ -1,5 +1,6 @@
 <?php
 require("../Modelo/Conexion.php");
+require("../Vistas/Menu.php");
 $id = $_GET['EDITAR_ID'];
 $sele = "SELECT * FROM platillo WHERE id_platillo = $id ";
 $result = $conexion->query($sele);
@@ -11,6 +12,7 @@ $row = mysqli_fetch_assoc($result);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/Estilos_Inputs.css" type="text/css">
     <title>EDITAR CLIENTES</title>
     <!--======================================= ESTILO DE LA TABLA PLOMO ==============================-->
 
@@ -55,31 +57,32 @@ WHERE id_Usuario=TRIM(' . $id . ')';
 
 ?>
 
-    <body id="main_body">
-        <form method="post" action="">
-           
-            <li id="li_3">
-                <label>Platillo: </label>
-                <div>
+    <body>
+        <div class="container">
+
+
+            <form method="post" action="">
+                <div class="form-group">
+                    <label>Platillo: </label>
                     <input id="platillo" name="platillo" type="text" value="<?php echo $row['platillo']; ?>" />
                 </div>
-            </li>
+                </li>
 
-            <li id="li_4">
-                <label>Costo:</label>
-                <div>
+                <div class="form-group">
+                    <label>Costo:</label>
                     <input id="costo" name="costo" class="element text medium" type="text" maxlength="255" value="<?php echo $row['costo']; ?>" />
                 </div>
-            </li>
 
-            <li class="buttons">
-                <input type="hidden" name="form_id" value="18653" />
-                <input id="saveForm" class="button_text" type="submit" name="enviar" value="Editar" />
-                <input class="button_text" type="submit" onclick="javascript: form.action='../Vistas/ConsultaUsuarios.php'" value="Retornar" />
 
-                </ul>
-        </form>
 
+
+
+                <div class="form-group">
+                    <button id="saveForm" type="submit" name="enviar">EDITAR</button>
+                    <button class="button2" type="submit" onclick="javascript: form.action='../Vistas/ConsultarPlatillo.php';">REGRESAR</button>
+                </div>
+            </form>
+        </div>
     <?php } ?>
 
     </div>
