@@ -13,9 +13,9 @@ iconoMenu.addEventListener('click', (e) => {
   // Alternamos su atributo 'src' para el ícono del menú
   const rutaActual = e.target.getAttribute('src');
 
-  if (rutaActual == '../img/icono.png') {
-    e.target.setAttribute('src', '../img/icono2.png');
-  } else {
+  if (rutaActual == '../img/icono2.png') {
     e.target.setAttribute('src', '../img/icono.png');
+  } else {
+    e.target.setAttribute('src', '../img/icono2.png');
   }
 });

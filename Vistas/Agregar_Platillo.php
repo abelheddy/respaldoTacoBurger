@@ -18,13 +18,12 @@ include('Menu.php');
 
             <h1>Alta Platillos</h1>
 
-
+            <label>Nombre platillo:</label>
             <div class="form-group">
-                <label>Nombre platillo:</label>
                 <input type="text" name="nomPlatillo">
             </div>
-            <div class="form-group">
-                <label>Precio:</label>
+            <label>Precio:</label>
+            <div class="form-group">            
                 <input type="text" name="precio">
             </div>
 
